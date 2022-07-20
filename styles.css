@@ -2,7 +2,7 @@
   --blue: #3198f5;
   --gray: rgba(234, 241, 248, 1);
   --black: #05051e;
-  --cyan: #4ad3d3;
+  --cyan: #88FCFC;
   --yellow: #ffcc04;
 
 }
@@ -123,11 +123,11 @@ h1.my-name {
   font-family: 'Sora', sans-serif;
   font-weight: 500;
   background-image: linear-gradient(-225deg,
-      white 0%,
-      var(--cyan) 35%,
+      white 10%,
+      var(--cyan) 25%,
       var(--yellow) 50%,
-      var(--cyan) 65%,
-      white 100%);
+      var(--cyan) 75%,
+      white 90%);
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
