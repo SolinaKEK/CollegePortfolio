@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solina Kim</title>
+  <meta property="og:title" content="Solina Kim" />
+  <meta name="description" content="Portfolio for Solina Kim.">
+  <meta name="author" content="Solina Kim">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/23a76d2e32.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="./tetris_files/constants.js" defer></script>
+  <script type="text/javascript" src="./tetris_files/board.js" defer></script>
+  <script type="text/javascript" src="./tetris_files/piece.js" defer></script>
+  <!--<script type="text/javascript" src="./main.js" defer></script>-->
+  <script type="text/javascript" src="./router.js" defer></script>
+  <script type="text/javascript" src="./tetris_files/tetris.js" defer></script>
+</head>
+
+<body>
+  <div id="placeholder">
+    <p class="error-message">Loading...</p>
+  </div>
+  <!-- MAIN PAGE -->
+  <!-- MAIN PAGE -->
+  <!-- MAIN PAGE -->
+  <template id="main-page" class="page-wrapper">
+    <section id="main-page-contents" class="centered blue-bg">
+      <div class="main-name-div blue-bg">
+        <h1 class="my-name blue-bg">Solina Kim</h1><br>
+      </div>
+      <div class="horizontal-menu-buttons blue-bg" id="horizontal-menu-buttons">
+        <a class='tetris-icon' onclick="showContent('#play-tetris')">
+          <img class='icon tetris-icon' src="assets/tetris.png" width="42" />
+        </a>
+        <a onclick="showContent('#portfolio-pages')">
+          <i class="fa-solid fa-rocket blue-bg"></i>
+        </a>
+        <a href="https://drive.google.com/uc?export=download&id=1j3M1SeUviPJWBrjmcui_OD6JagmQBHwP"
+          download="SolinaKim_resume" target="_blank">
+          <i class="fa-solid fa-file blue-bg"></i>
+        </a>
+        <a href="https://github.com/SolinaKEK" target="_blank">
+          <i class="fa-brands fa-github blue-bg"></i>
+        </a>
+        <a href="mailto:kkim24@nd.edu">
+          <i class="fa-regular fa-envelope-open blue-bg"></i>
+        </a>
+        <a class='cave-icon' onclick="showContent('#cave-pages')"><img class="icon cave-icon" src="./assets/cave.png"
+            width="39" />
+        </a>
+      </div>
+    </section>
+    <section>
+      <div class="credits blue-bg">
+        <p class="footer blue-bg">
+          Designed and built by Solina Kim | <a href="fixthisdummygithubwebsite.com" class="blue-bg">Source</a></p>
+      </div>
+    </section>
+  </template>
+
+
+  <!-- TETRIS PAGE -->
+  <!-- TETRIS PAGE -->
+  <!-- TETRIS PAGE -->
+  <template id="play-tetris" class="page-wrapper">
+    <section class="tetris-page-contents gray-bg">
+      <div class="tetris-grid">
+        <canvas id="board" class="game-board"></canvas>
+        <div class="right-column">
+          <div><canvas id="next" class="next"></canvas></div>
+          <div>
+            <p class="game-stats">Score: <span id="score">0</span></p>
+            <p class="game-stats">Lines: <span id="lines">0</span></p>
+            <p class="game-stats">Level: <span id="level">0</span></p>
+            <button id='lbButton' class="leaderboard-button">Leaderboard</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="my-info" id="tetris-page-my-info">
+        <div class="tetris-name-div">
+          <h1 class="tetris-name">Solina Kim</h1>
+        </div>
+        <div class="menu-buttons" id="columned-menu-buttons">
+          <a onclick="showContent('#main-page')">
+            <i class="gray-bg fa-solid fa-house-user"></i>
+          </a>
+          <a onclick="showContent('#portfolio-pages')">
+            <i class="gray-bg fa-solid fa-rocket"></i>
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1j3M1SeUviPJWBrjmcui_OD6JagmQBHwP"
+            download="SolinaKim_resume" target="_blank">
+            <i class="gray-bg fa-solid fa-file" id="tetris-page-file-icon"></i>
+          </a>
+          <a href="https://github.com/SolinaKEK" target="_blank">
+            <i class="gray-bg fa-brands fa-github"></i>
+          </a>
+          <a href="mailto:kkim24@nd.edu">
+            <i class="fa-regular fa-envelope-open gray-bg"></i>
+          </a>
+          <a onclick="showContent('#cave-pages')" class="cave-icon gray-bg">
+            <img src="assets/cave.png" class=' gray-bgicon cave-icon' width="40" id="tetris-page-cave-icon" />
+          </a>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="credits">
+        <p class="footer">
+          Designed and built by Solina Kim | <a href="fixthisdummygithubwebsite.com">Source</a></p>
+      </div>
+    </section>
+  </template>
+
+  <!-- normal pages -->
+  <!-- normal pages -->
+  <!-- normal pages -->
+  <template id="portfolio-pages" class="page-wrapper">
+
+    <!--NAV BAR-->
+    <div class='nav-bar blue-bg' id="nav-bar">
+      <nav class='nav-bar blue-bg'>
+        <div id="non-portfolio-links">
+          <a class='tetris-icon' onclick="showContent('#play-tetris')">
+            <img class='icon tetris-icon' src="assets/tetris.png" width="27" />
+          </a>
+          <a onclick="showContent('#cave-pages')">
+            <img class="icon" src="assets/cave.png" width="25" />
+          </a>
+        </div>
+        <div id="portfolio-links">
+          <a class="nav-link" onclick="showContent('#main-page')">
+            <i class="fa-solid fa-house-user" id="house-icon"></i>
+          </a>
+          <a class="nav-link" href=#about-me-catchphrase>About</a>
+          <a class="nav-link" href=#tools-skills>Skills</a>
+          <a class="nav-link" href=#experience>Experience</a>
+          <a class="nav-link" href=#projects>Projects</a>
+          <a class="nav-link" href=#get-in-touch>Contact</a>
+        </div>
+      </nav>
+    </div>
+
+    <!--MAIN CONTENT-->
+    <main>
+      <div id="about-me-catchphrase" class="blue-bg">
+        <div id="name-div">
+          <h1 id="i-am">I am...<br></h1>
+        </div>
+        <div id="adjectives-div">
+          <p class="one-line-description">a ML/DL experimenter</p>
+          <p class="one-line-description">a full stack developer</p>
+          <p class="one-line-description">a healthcare enthusiast</p>
+          <p class="one-line-description">an international collaborator</p>
+          <p class="one-line-description">a sports fanatic</p>
+          <p class="one-line-description">a cave-woman</p>
+        </div>
+      </div>
+
+      <div id="about-me-description" class="gray-bg">
+
+        <div id="about-me-text" class="gray-bg">
+          <p class="gray-bg">
+            <!-- ADD INTRODUCTION PARAGRAPH -->
+            <p class="emphasize">Hi!</p><br>
+            My name is Solina Kim, and I'm a computer science major at the University of Notre Dame. As a rising
+            junior dedicated to working as an engineer in the healthcare industry, I last worked at Indiana University
+            Health as a ML Engineering intern to help evaluate the performance of Microsft's Text Analytics for health.
+            Throughout the past 4 semesters, I've also assisted in ML-based molecular design research and bioinformatics
+            research on malaria. <br>
+            In my free time, I like to do build programs and apps, play lacrosse and badminton, workout, adventure new
+            places, and more. <br>
+            <!--
+            I am also a part-time SAT tutor! Please <a onclick="showContent('#sat-page')">contact me</a> if you're
+            interested in SAT tutoring.<br>
+            -->
+          </p>
+        </div>
+        <div id="my-photo-div" class="gray-bg">
+          <span class="black dot"></span>
+          <span class="dot pink"></span>
+
+          <img id="about-me-photo" src="assets/my_photo.JPG" width="200" class="gray-bg" />
+          
+
+        </div>
+      </div>
+
+      <div id="tools-skills" class="yellow-bg">
+        <div class="section-title-div">
+          <h2 class="portfolio-section-title text-align-left">Tools and Skills</h2>
+        </div>
+        <div id="skills-icons">
+          <div id="cs-skills">
+
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-plain.svg"
+                width="50">
+              <p class="skills-description">C Language</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img"
+                src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg">
+              <p class="skills-description">C++</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img"
+                src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg">
+              <p class="skills-description">Python</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img" src="https://www.r-project.org/Rlogo.png">
+              <p class="skills-description">R</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img"
+                src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png">
+              <p class="skills-description">SQL</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img" src="https://cdn-icons-png.flaticon.com/512/6132/6132220.png">
+              <p class="skills-description">Scala</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Matlab_Logo.png/667px-Matlab_Logo.png">
+              <p class="skills-description">MATLAB</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img" src="./assets/seqman.png">
+              <p class="skills-description">SeqMan</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/ArcGIS_logo.png/800px-ArcGIS_logo.png">
+              <p class="skills-description">ArcGIS</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="50">
+              <p class="skills-description">Javascript</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img"
+                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
+                width="50">
+              <p class="skills-description">NodeJS</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg"
+                width="50">
+              <p class="skills-description">CSS</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="50">
+              <p class="skills-description">HTML</p>
+            </div>
+
+          </div>
+          <div id="soft-skills">
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img"
+                src="https://cdn-icons.flaticon.com/png/512/3201/premium/3201615.png?token=exp=1658298146~hmac=88ba41c5bfec3a6d23165d332cb537c5">
+              <p class="skills-description">Communication</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img" src="https://cdn-icons-png.flaticon.com/512/860/860398.png">
+              <p class="skills-description">Leadership</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img" src="https://cdn-icons-png.flaticon.com/512/3749/3749896.png">
+              <p class="skills-description">Creative Thinking</p>
+            </div>
+            <div class="skills-icon-bg">
+              <img class="skills-icon-img" src="https://cdn-icons-png.flaticon.com/512/4727/4727424.png">
+              <p class="skills-description">Work Ethic</p>
+            </div>
+          </div>
+          <div id="cs-courses">
+            <h2 class="subtitle text-align-left" id="courses-subtitle">Courses and Certificates</h2>
+            <div id="cs-courses-icons-div">
+
+              <div class="skills-icon-bg">
+                <img class="skills-icon-img"
+                  src="https://cdn-icons.flaticon.com/png/512/981/premium/981507.png?token=exp=1658298516~hmac=ffe92d8e41bfdc2c829416d6b88add5f">
+                <p class="skills-description">Data Structures</p>
+              </div>
+              <div class="skills-icon-bg">
+                <img class="skills-icon-img"
+                  src="https://cdn-icons.flaticon.com/png/512/4260/premium/4260932.png?token=exp=1658298541~hmac=38dfa1a081b01299d2b7eafac7b8f5d8">
+                <p class="skills-description">Systems Programming</p>
+              </div>
+              <div class="skills-icon-bg">
+                <img class="skills-icon-img"
+                  src="https://cdn-icons.flaticon.com/png/512/3153/premium/3153038.png?token=exp=1658298655~hmac=ad60765739970ca7889989fd1e81fb0e">
+                <p class="skills-description">Discrete Math</p>
+              </div>
+              <div class="skills-icon-bg">
+                <img class="skills-icon-img"
+                  src="https://cdn-icons.flaticon.com/png/512/1835/premium/1835276.png?token=exp=1658298710~hmac=a1edafcab15431da245b2c530367486d">
+                <p class="skills-description">Computer Architecture</p>
+              </div>
+              <div class="skills-icon-bg">
+                <img class="skills-icon-img" src="https://cdn-icons-png.flaticon.com/512/1693/1693746.png">
+                <p class="skills-description">Theory of Computing</p>
+              </div>
+              <div class="skills-icon-bg">
+                <img class="skills-icon-img" src="https://cdn-icons-png.flaticon.com/512/2906/2906274.png">
+                <p class="skills-description">Database Concepts</p>
+              </div>
+              <div class="skills-icon-bg">
+                <img class="skills-icon-img"
+                  src="https://cdn-icons.flaticon.com/png/512/515/premium/515653.png?token=exp=1658298838~hmac=b44358bb4c28acc0b832bbfb176343cb">
+                <p class="skills-description">Graph Theory</p>
+              </div>
+              <div class="skills-icon-bg">
+                <img class="skills-icon-img" src="https://cdn-icons-png.flaticon.com/512/300/300221.png">
+                <p class="skills-description">Data Analytics Professional Certificate</p>
+              </div>
+              <div class="skills-icon-bg">
+                <img class="skills-icon-img" id="stanford-logo"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Stanford_Cardinal_logo.svg/1200px-Stanford_Cardinal_logo.svg.png">
+                <p class="skills-description">ML Certificate</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="experience" class="gray-bg">
+        <div class="section-title-div">
+          <h2 class="portfolio-section-title text-align-center">Experience</h2>
+        </div>
+        <div class="experience-inner-content">
+          <div class="tab">
+            <button class="tablinks" onclick="openJob(event, 'job1')" id="defaultOpen">IU Health</button>
+            <button class="tablinks" onclick="openJob(event, 'job2')">Notre Dame, Chawla Lab</button>
+            <button class="tablinks" onclick="openJob(event, 'job3')">Notre Dame, Lobo Lab</button>
+            <button class="tablinks" onclick="openJob(event, 'job4')">Korea CDC</button>
+          </div>
+
+          <div id="job1" class="tabcontent">
+            <h3 class="company-name jobtitles">Indiana University Health </h3>
+            <h3 class="job-title jobtitles">ML Engineering Intern</h3>
+            <h3 class="job-duration">May 2022 - Present</h3>
+            <ul class="job-description">
+              <li>Used Microsoft’s Text Analytics for Health to explore named entity recognition (NER) quality of IU
+                Health’s patient data. Created a method to evaluate Microsoft’s text analytics performance.</li>
+            </ul>
+          </div>
+
+          <div id="job2" class="tabcontent">
+            <h3 class="company-name jobtitles">University of Notre Dame</h3>
+            <h3 class="job-title jobtitles">Research Assistant <a class="lab-link"
+                href="https://niteshchawla.nd.edu/bio/">@ Chawla Lab</a></h3>
+            <h3 class="job-duration">August 2021 - May 2022</h3>
+            <ul class="job-description">
+              <li>Generative AI Design and Exploration of Nucleoside Analogs</li>
+              <li>Used Python to help develop the Conditional Random Transformer (CRT) model – a ML based algorithm
+                which efficiently searches chemical space to generate limited quantity of molecules that are
+                qualitatively similar to SARS-CoV-2 inhibitors.</li>
+              <li>Used Python and RDKit to analyze validity and similarity of molecules generated by model based on
+                Tanimoto similarity, Morgan fingerprints, and pairwise similarity.</li>
+            </ul>
+          </div>
+          <div id="job3" class="tabcontent">
+            <h3 class="company-name jobtitles">University of Notre Dame</h3>
+            <h3 class="job-title jobtitles">Research Assistant <a class="lab-link"
+                href="https://biology.nd.edu/people/neil-f-lobo/">@ Lobo Lab</a></h3>
+            <h3 class="job-duration">March 2021 - December 2022</h3>
+            <ul class="job-description">
+              <li>WHO Project on ITS2 and CO1 Gene Sequence Analysis</li>
+              <li>Created R script to extract and parse all available CO1 and ITS2 sequences of sub-Sharan African
+                Anopheles from NCBI and Bold Systems. Script also successfully detected genetic anomalies due to unknown
+                species or human error in data submission.</li>
+              <li>Used SeqMan to further analyze anomalous genes and filter species to conduct physiochemical analysis
+                on.</li>
+            </ul>
+          </div>
+          <div id="job4" class="tabcontent">
+            <a href="https://en.wikipedia.org/wiki/Korea_Disease_Control_and_Prevention_Agency">
+              <h3 class="company-name jobtitles">Korea Centers for Disease Control and Prevention</h3>
+            </a>
+            <h3 class="job-title jobtitles">Research Intern <a class="lab-link">@ Insect-Borne Diseases Department</a>
+            </h3>
+            <h3 class="job-duration">July 2019 - August 2019</h3>
+            <ul class="job-description">
+              <li>Collected mosquito samples, manually identified species, and conducted PCR for the government’s
+                insect-borne diseases
+                surveillance system.</li>
+              <li>Designed and conducted experiments to test mosquito repellant products for client companies.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div id="projects" class="white-bg">
+        <div class="section-title-div">
+          <h2 class="portfolio-section-title text-align-center">Projects</h2>
+        </div>
+        <div id="main-projects">
+          <div class="project-div gray-bg" id="project1">
+            <div class="project-title-div">
+              <a href="https://github.com/SolinaKEK/Student-Advisor-Matching"><i class="project-link fa-brands fa-github"></i></a>
+              <h3 class="project-title">Preference Matching Algorithm</h3>
+            </div>
+            <ul class="project-description">
+              <li>Developed an expanded version of the Gale-Shapley algorithm to fit unequal sets and incomplete,
+                noncardinal preferences.</li>
+              <li>Implemented the ideated algorithm into a memory and run-time efficient program using deques and sets.
+              </li>
+              <li>Utilized Python, Pandas, ImapLib, and NumPy to embed the program into an automated email UI for Notre
+                Dame to use when matching advisors to graduate students.</li>
+              <li>Identified deliverables, determined project dependencies and design considerations, assigned specific
+                resources and specifications,
+                distributed responsibility among team members, tracked and reported the project progress weekly.</li>
+            </ul>
+            <div class="project-skills">
+              <p>Data Structures</p>
+              <p>Algorithms</p>
+              <p>ImapLib</p>
+              <p>Pandas</p>
+              <p>Teamwork</p>
+            </div>
+          </div>
+          <div class="project-div gray-bg" id="project-2">
+            <div class="project-title-div">
+              <a href="https://github.com/SolinaKEK/KiwoomAPI"><i class="project-link fa-brands fa-github"></i></a>
+              <h3 class="project-title">Kiwoom Securities Tradebot</h3>
+            </div>
+            <ul class="project-description">
+              <li>Developed a program to request, collect, pipe data from Kiwoom Security’s (S Korea’s #1 stock
+                brokerage service) API.</li>
+              <li>Designed an Excel file to receive data from above Python program and output visualization of metrics
+                as requested by client.</li>
+              <li>Reduced client’s time spent on data analysis by 70%, while maintaining his 40% annual average profit
+                rate.</li>
+            </ul>
+            <div class="project-skills">
+              <p>Python</p>
+              <p>Kiwoom API</p>
+              <p>pyqt5</p>
+              <p>client service</p>
+              <p>communication</p>
+            </div>
+          </div>
+          <div class="project-div gray-bg" id="project-3">
+            <div class="project-title-div">
+              <a href=""><i class="project-link fa-brands fa-github"></i></a>
+              <h3 class="project-title">Sociopolitical Factors of Covid-19 Response</h3>
+            </div>
+            <ul class="project-description">
+              <li>Received DaVinci Grant of $4390 by the University of Notre Dame to fund research.</li>
+              <li>Defined a country-specific qualitative index of sociopolitical factors that affect data surveillance measures for pandemic control.</li>
+              <li>Used R to analyze the relationship between index and effectiveness of pandemic control in China, South Korea, and USA based on surveys conducted in the 3 countries.</li>
+            </ul>
+            <div class="project-skills">
+              <p>Political Philosophy</p>
+              <p>Statistics</p>
+              <p>R</p>
+              <p>Problem Solving</p>
+              <p>Project Management</p>
+            </div>
+          </div>
+        </div>
+        <div id="button-div">
+          <button id="button-more-projects" onclick="">More Projects</button>
+        </div>
+        <template id="more-projects">
+
+        </template>
+      </div>
+      <div id="get-in-touch" class="blue-bg">
+        <div class="section-title-div text-align-left">
+        <h2 class="portfolio-section-title">Contact</h2>
+        </div>
+        <div id="contact-description" class="text-align-left subtitle">I'm interested in working for a company that values work integrity and diversity of thought in the spirit of true innovation, service, and entrepreneurship in the healthcare industry.</div>
+
+        <div id="contact-links">
+          <a href="https://www.linkedin.com/in/solina-kim-8779b1200">
+            <i class="fa-brands blue-bg fa-linkedin"></i> 
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1j3M1SeUviPJWBrjmcui_OD6JagmQBHwP"
+            download="SolinaKim_resume" target="_blank">
+            <i class="fa-solid fa-file blue-bg"></i>
+          </a>
+          <a href="https://github.com/SolinaKEK" target="_blank">
+            <i class="fa-brands fa-github blue-bg"></i>
+          </a>
+          <a href="mailto:kkim24@nd.edu">
+            <i class="fa-regular fa-envelope-open blue-bg"></i>
+          </a>
+        </div>
+      </div>
+      
+    </main>
+
+    <script>
+      function openJob(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
+
+  </template> <!-- end of portofolio pages -->
+
+  <!-- cave pages -->
+  <!-- cave pages -->
+  <!-- cave pages -->
+  <template id="cave-pages">
+    <p class="error-message">Sorry! This page isn't ready yet :)</p>
+  </template>
+
+  <!-- sat page -->
+  <!-- sat page -->
+  <!-- sat page -->
+  <template id="sat-page">
+    <p class="error-message">Sorry! This page isn't ready yet :)</p>
+  </template>
+
+</body>
+
+</html>

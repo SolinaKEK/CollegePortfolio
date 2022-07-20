@@ -1,0 +1,701 @@
+:root{
+  --blue: #3198f5;
+  --gray: rgba(234, 241, 248, 1);
+  --black: #05051e;
+  --cyan: #4ad3d3;
+  --yellow: #ffcc04;
+
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  max-width: 100vw;
+  scroll-behavior: smooth;
+}
+
+.gray-bg {
+  background-color: var(--gray);
+  color: var(--black);
+}
+
+.blue-bg {
+  background-color: var(--blue);
+  color: white;
+}
+
+.yellow-bg { 
+  background-color: var(--yellow);
+  color: var(--black);
+}
+.white-bg{
+  background-color: white;
+  color: var(--blue);
+}
+
+#placeholder {
+  height: 100vh;
+  width: 100vw;
+}
+
+.error-message {
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateX(-50%);
+}
+
+img.icon {
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
+}
+
+
+
+/*////////////////////*/
+/*////////////////////*/
+/*//////MAIN PAGE/////*/
+/*////////////////////*/
+#main-page-contents {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.centered {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.main-name-div {
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  top: 30%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  width: max-content;
+}
+
+.horizontal-menu-buttons {
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  top: 60%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+}
+
+.horizontal-menu-buttons > .tetris-icon {
+  position: relative;
+  bottom: 3px;
+}
+
+.horizontal-menu-buttons > .cave-icon {
+  position: relative;
+  bottom: 1px;
+}
+.main-name-div>h1.my-name {
+  font-size: 140px;
+  text-align: center;
+}
+
+.horizontal-menu-buttons>a,
+img {
+  vertical-align: text-bottom;
+  font-size: 2rem;
+  padding: 0 4px 0 4px;
+}
+
+/*////////////////////*/
+/*////////////////////*/
+/*////////NAME////////*/
+/*////////////////////*/
+
+h1.my-name {
+  font-family: 'Sora', sans-serif;
+  font-weight: 500;
+  background-image: linear-gradient(-225deg,
+      white 0%,
+      var(--cyan) 35%,
+      var(--yellow) 50%,
+      var(--cyan) 65%,
+      white 100%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 20s ease infinite;
+  display: inline-block;
+  padding-bottom: 10%;
+}
+
+@keyframes textclip {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu-buttons>a, img{
+  font-size: 50px;
+  cursor: pointer;
+}
+
+/*////////////////////*/
+/*//////CREDITS///////*/
+/*////////////////////*/
+/*////////////////////*/
+
+.footer {
+  position: fixed;
+  bottom: 0.3rem;
+  right: 0;
+  text-align: right;
+  font-size: 10px;
+  padding-right: 15px;
+  padding-top: 3%;
+}
+
+/*////////////////////*/
+/*////TETRIS PAGE/////*/
+/*////////////////////*/
+/*////////////////////*/
+
+.tetris-page-contents {
+  width: 100%;
+  height: 100%;
+  font-family: 'Press Start 2P';
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  overflow-y: hidden;
+}
+
+.tetris-grid {
+  display: grid;
+  grid-template-columns: 280px 175px;
+  align-items: bottom;
+  height: 85%;
+  padding-top: 15vh;
+}
+
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 75%;
+}
+
+#board {
+  border: solid 2px;
+  border-color: black;
+}
+
+.game-stats,
+#score,
+#lines,
+#level {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  color: black;
+  padding-bottom: 5px;
+}
+
+.leaderboard-button {
+  background-color: #84a4fc;
+  font-family: 'Press Start 2P', curisve;
+  font-size: 10px;
+  padding: 10px 7px;
+  margin: 0;
+  cursor: pointer;
+}
+
+#tetris-page-my-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 65%;
+  padding-top: 15vh;
+  padding-left: 20px;
+}
+
+
+#columned-menu-buttons {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: end;
+  justify-content: right;
+}
+
+#columned-menu-buttons>a {
+  padding: 50px 10px 0px 0px;
+  font-size: 35px;
+}
+#tetris-page-file-icon{
+  position: relative;
+  left: -5px;
+}
+#tetris-page-cave-icon{
+  position: relative;
+  left: 10px;
+  bottom: 3px;
+}
+
+#columned-menu-buttons,
+.tetris-name-div {
+  background-color: rgba(234, 241, 248, 1);
+  justify-items: right;
+}
+
+.tetris-name-div>h1.tetris-name {
+  font-size: 200%;
+  font-family: 'Press Start 2P';
+  text-align: end;
+}
+
+/*////////////////////*/
+/*////////////////////*/
+/*//PORTFOLIO PAGES///*/
+/*////////////////////*/
+main {
+  width: 100vw;
+}
+.portfolio-section-title {
+  font-size: 30px;
+  font-weight: 500;
+}
+.subtitle {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.section-title-div{
+  width: 100%;
+  padding-top: 17vh;
+}
+
+.text-align-right {
+  text-align: right;
+  justify-content: end;
+  padding-right: 15vw;
+}
+.text-align-left {
+  text-align: left;
+  justify-content: start;
+  padding-left: 5vw;
+}
+.text-align-center{
+  text-align: center;
+  padding-top: 5vh;
+}
+/*////////////////////*/
+/*//////NAV BAR///////*/
+/*////////////////////*/
+
+nav.nav-bar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 14vh;
+  padding-left: 30px;
+  padding-right: 30px;
+  z-index: 10;
+}
+
+.nav-link {
+  color: white;
+  padding-right: 50px;
+}
+
+#house-icon {
+  color: #ffcc04;
+}
+
+
+/*////////////////////*/
+/*////ABOUT ME//////*/
+/*////////////////////*/
+
+#about-me-catchphrase {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+
+}
+
+#i-am, #adjectives-div {
+  width: 40vw;
+}
+#i-am {
+  font-size: 75px;
+  font-weight: 400;
+  color: var(--yellow);
+  text-align: center;
+}
+
+
+#adjectives-div > p{
+  padding-bottom: 8px;
+  font-size: 20px;
+}
+
+#about-me-description {
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+}
+
+#about-me-text {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding: 0 0% 0 15%;
+  width: 90vw;
+}
+
+.emphasize {
+  font-size: 50px;
+}
+
+#my-photo-div {
+  display: flex;
+  justify-content: end;;
+  align-items: center;
+}
+
+span.dot {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: relative;
+}
+
+span.black {
+  z-index: 2;
+  width: 290px;
+  border-radius: 50%;
+  background-color: var(--black);
+  position: relative;
+  left: 14vw;
+}
+span.pink {
+  z-index: 1;
+  height: 330px;
+  border-radius: 50%;
+  background-color: #ff6474;
+  position: relative;
+  right: 10vw;
+  bottom: 2vh;
+}
+
+#about-me-photo {
+  position: relative;
+  border-radius: 45%;
+  z-index: 3;
+  background-color: transparent;
+  top: 4vh;
+  right: 26vw;
+}
+
+
+/*////////////////////*/
+/*/////TOOLSSKILLS////*/
+/*////////////////////*/
+
+#tools-skills{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  overflow-x: hidden;
+
+}
+#tools-skills > div > h2 {
+  padding-left: 8%;
+}
+
+#skills-icons{
+  padding: 1% 4% 0% 7%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-around;
+  font-size: 14px;
+  text-align: start;
+  
+}
+
+#cs-courses {
+  width: 100%;
+
+}
+
+#cs-skills, #soft-skills, #cs-courses-icons-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.skills-icon-bg{
+  display: flex;
+  margin: 1vh 2vh;
+  align-items: center;
+  padding: 15px 15px;
+  width: 13vw;
+  height: 4vh;;
+  background-color: rgba(249,250,251,0.85);
+  border-radius: 10% 15%;
+  cursor: pointer;
+}
+
+img.skills-icon-img {
+  padding-right: 20px;
+  width: 50px;
+}
+
+#stanford-logo {
+  width: 35px;
+}
+#courses-subtitle {
+  position: relative;
+  left: -4vw;
+}
+
+/*////////////////////*/
+/*/////EXPERIENCE.////*/
+/*////////////////////*/
+
+#experience {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 9fr;
+  overflow-x: hidden;
+
+}
+
+.experience-inner-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;;
+}
+
+.tab {
+  padding-left: 8vw;
+  padding-top: 14vh;
+  width: 20vw;
+}
+.tablinks {
+  width: 100%;
+  height: 8vh;
+  background-color: transparent;
+  border-style: none solid none none;
+  border-right-color: var(--blue);
+  border-right-width: 4px;
+  padding-right: 6px;
+  cursor: pointer;
+  text-align: end;
+  font-weight: 500;
+}
+.tabcontent {
+  padding-top: 11vh;
+  padding-left: 10vw;
+  padding-right: 20vw;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+.active {
+  border-right-color: var(--yellow);
+}
+
+h3.jobtitles{
+  display: inline-block;
+  padding-right: 10px;
+  padding-bottom: 8px;
+}
+
+h3.company-name {
+  font-size: 20px;
+}
+
+h3.job-title {
+  font-size: 18px;
+  font-weight: 200;
+}
+
+h3.job-duration {
+  padding-bottom: 40px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--blue);
+}
+
+ul.job-description{
+  font-size: 15px;
+}
+a.lab-link{
+  font-weight: 300;
+}
+
+/*////////////////////*/
+/*//////PROJECTS//////*/
+/*////////////////////*/
+
+#projects{
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--black);
+  overflow-x: hidden;
+}
+
+#main-projects{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 8vh;
+}
+.project-div {
+  width: 40%;
+  height: 45vh;
+  margin: 20px;
+  border-radius: 3%;
+  justify-content: space-between;
+}
+.project-title-div{
+  display: flex;
+  padding: 20px;
+}
+
+i.project-link{
+  padding-right: 10px;
+  position: relative;
+  top: 2px;
+  font-size: 17px;
+}
+ul.project-description{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 73%;
+  padding: 0 20px;
+  list-style: none;
+}
+ul.project-description > li {
+  padding-bottom: 12px;
+  font-weight: 300;
+  font-size: 15px;
+}
+div.project-skills{
+  display: flex;
+  justify-content: space-around;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--blue);
+
+}
+
+
+#button-div{
+  width: 100%;
+  padding: 5vh 0;
+  display: flex;
+  justify-content: center;
+}
+
+#button-more-projects {
+  width: 15vw;
+  height: 6vh;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  background-color: var(--yellow);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/*CONTACT*/
+
+#get-in-touch{
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#contact-description {
+  padding-top: 5vh;
+  padding-right: 20vw;
+  width: 63vw;
+  font-weight: 300;
+}
+
+#contact-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-right: 3vw;
+  height: 40vh;
+}
+
+#contact-links > a {
+  text-align: right;
+  font-size: 25px;
+}
+#contact-links > a > i {
+  color: var(--yellow);
+}
+#contact-links > a > i.fa-file {
+  position: relative;
+  right: 0.2vw;
+}
+#contact-links > .nav-link {
+  text-align: right;
+  padding: 0;
+}
