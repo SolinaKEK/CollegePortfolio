@@ -26,6 +26,36 @@
   <div id="placeholder">
     <p class="error-message">Loading...</p>
   </div>
+
+  <script>
+    window.onload = async () => {
+      showContent("#main-page");
+    }
+    function showContent(templateid) {
+      var temp = document.querySelector(templateid);
+      var placeholder = document.getElementById("placeholder");
+      const clone = temp.content.cloneNode(true);
+      placeholder.innerHTML = ' ';
+      placeholder.appendChild(clone);
+
+      if (templateid === "#play-tetris") {
+        const canvas = document.getElementById('board');
+        const canvasNext = document.getElementById('next');
+        const lbButton = document.getElementById('lbButton');
+        tetris = new Tetris(canvas, canvasNext, lbButton);
+        tetris.play();
+      }
+      else if (templateid == "#portfolio-pages") {
+        tabcontent = document.getElementsByClassName("job-panel-div");
+        tablinks = document.getElementsByClassName("job-tab-item");
+      }
+
+      tabcontent = document.getElementsByClassName("job-panel-div");
+      tablinks = document.getElementsByClassName("job-tab-item");
+    }
+  </script>
+
+
   <!-- MAIN PAGE -->
   <!-- MAIN PAGE -->
   <!-- MAIN PAGE -->
@@ -41,7 +71,7 @@
         <a onclick="showContent('#portfolio-pages')">
           <i class="fa-solid fa-rocket blue-bg"></i>
         </a>
-        <a href="https://drive.google.com/uc?export=download&id=1j3M1SeUviPJWBrjmcui_OD6JagmQBHwP"
+        <a href="https://drive.google.com/uc?export=download&id=1hDyjHncNUUYpr9aqm0lqyFg8D4qYbh6J"
           download="SolinaKim_resume" target="_blank">
           <i class="fa-solid fa-file blue-bg"></i>
         </a>
@@ -94,7 +124,7 @@
           <a onclick="showContent('#portfolio-pages')">
             <i class="gray-bg fa-solid fa-rocket"></i>
           </a>
-          <a href="https://drive.google.com/uc?export=download&id=1j3M1SeUviPJWBrjmcui_OD6JagmQBHwP"
+          <a href="https://drive.google.com/uc?export=download&id=1hDyjHncNUUYpr9aqm0lqyFg8D4qYbh6J"
             download="SolinaKim_resume" target="_blank">
             <i class="gray-bg fa-solid fa-file" id="tetris-page-file-icon"></i>
           </a>
@@ -168,18 +198,15 @@
         <div id="about-me-text" class="gray-bg">
           <p class="gray-bg">
             <!-- ADD INTRODUCTION PARAGRAPH -->
-            <p class="emphasize">Hi!</p><br>
-            My name is Solina Kim, and I'm a computer science major at the University of Notre Dame. As a rising
-            junior dedicated to working as an engineer in the healthcare industry, I last worked at Indiana University
-            Health as a ML Engineering intern to help evaluate the performance of Microsft's Text Analytics for health.
-            Throughout the past 4 semesters, I've also assisted in ML-based molecular design research and bioinformatics
-            research on malaria. <br>
-            In my free time, I like to do build programs and apps, play lacrosse and badminton, workout, adventure new
-            places, and more. <br>
-            <!--
-            I am also a part-time SAT tutor! Please <a onclick="showContent('#sat-page')">contact me</a> if you're
-            interested in SAT tutoring.<br>
-            -->
+          <p class="emphasize">Hi!</p>
+          <p>
+          My name is Solina Kim, and I'm a computer science major at the University of Notre Dame. As a rising junior dedicated to working as an engineer in the healthcare industry, I spent this summer at Indiana University Health as a ML Engineering intern evaluating the performance of Microsoft's Text Analytics for Health.</p>
+          <p>I also have experience in done other projects at the intersection of healthcare and computer science, such as ML-based molecular design research for SARS-CoV-2 and bioinformatics for malaria.</p>
+          <p>In my free time, I like to do build programs and apps, play lacrosse and badminton, workout, play tetris,
+          adventure new places, and more.</p>
+          <p>
+          I am also a part-time SAT tutor! Please <a style="display: inline; cursor: pointer;" onclick="showContent('#sat-page')"><span>contact me</span></a> if you're
+          interested in SAT tutoring.
           </p>
         </div>
         <div id="my-photo-div" class="gray-bg">
@@ -187,7 +214,6 @@
           <span class="dot pink"></span>
 
           <img id="about-me-photo" src="assets/my_photo.JPG" width="200" class="gray-bg" />
-          
 
         </div>
       </div>
@@ -343,9 +369,10 @@
         <div class="experience-inner-content">
           <div class="tab">
             <button class="tablinks" onclick="openJob(event, 'job1')" id="defaultOpen">IU Health</button>
-            <button class="tablinks" onclick="openJob(event, 'job2')">Notre Dame, Chawla Lab</button>
-            <button class="tablinks" onclick="openJob(event, 'job3')">Notre Dame, Lobo Lab</button>
-            <button class="tablinks" onclick="openJob(event, 'job4')">Korea CDC</button>
+            <button class="tablinks" onclick="openJob(event, 'job2')">Lucy Family Institute</button>
+            <button class="tablinks" onclick="openJob(event, 'job3')">WHO & Notre Dame</button>
+            <button class="tablinks" onclick="openJob(event, 'job4')">Notre Dame, Lobo Lab</button>
+            <button class="tablinks" onclick="openJob(event, 'job5')">Korea CDC</button>
           </div>
 
           <div id="job1" class="tabcontent">
@@ -353,40 +380,57 @@
             <h3 class="job-title jobtitles">ML Engineering Intern</h3>
             <h3 class="job-duration">May 2022 - Present</h3>
             <ul class="job-description">
-              <li>Used Microsoft’s Text Analytics for Health to explore named entity recognition (NER) quality of IU
-                Health’s patient data. Created a method to evaluate Microsoft’s text analytics performance.</li>
+              <li>Parsed output from Microsoft’s Named Entity Recognition model on IU Health’s doctors’ notes, analyzed
+                qualitative scope of data, and statistically assessed accuracy of subset using Python Pandas and Scala
+                in a Databricks environment.</li>
+              <li>Provided novel insights on feasible applications of Microsoft’s services at the corporate and clinical
+                level by proactively communicating and balancing the diverse needs of stakeholders at IU Health,
+                Microsoft Cognitive Services, and AnalytiXIN.</li>
             </ul>
           </div>
 
           <div id="job2" class="tabcontent">
-            <h3 class="company-name jobtitles">University of Notre Dame</h3>
-            <h3 class="job-title jobtitles">Research Assistant <a class="lab-link"
-                href="https://niteshchawla.nd.edu/bio/">@ Chawla Lab</a></h3>
+            <h3 class="company-name jobtitles">Lucy Family Institue for Data and Society</h3>
+            <h3 class="job-title jobtitles">Research Assistant</h3>
             <h3 class="job-duration">August 2021 - May 2022</h3>
             <ul class="job-description">
               <li>Generative AI Design and Exploration of Nucleoside Analogs</li>
-              <li>Used Python to help develop the Conditional Random Transformer (CRT) model – a ML based algorithm
-                which efficiently searches chemical space to generate limited quantity of molecules that are
-                qualitatively similar to SARS-CoV-2 inhibitors.</li>
-              <li>Used Python and RDKit to analyze validity and similarity of molecules generated by model based on
-                Tanimoto similarity, Morgan fingerprints, and pairwise similarity.</li>
+              <li>Contributed to developing the Conditional Random Transformer model – a ML based algorithm which
+                efficiently searches chemical space to generate limited quantity of molecules that are qualitatively
+                similar to SARS-CoV-2 inhibitors – using Python RDKit, Tqdm, Pandas, and NumPy.</li>
+              <li>Analyzed Tanimoto similarity, Morgan fingerprints, pairwise similarity, and validity of molecules
+                generated by CRT model using Python RDKit and Pandas.
+              </li>
             </ul>
           </div>
           <div id="job3" class="tabcontent">
-            <h3 class="company-name jobtitles">University of Notre Dame</h3>
-            <h3 class="job-title jobtitles">Research Assistant <a class="lab-link"
-                href="https://biology.nd.edu/people/neil-f-lobo/">@ Lobo Lab</a></h3>
-            <h3 class="job-duration">March 2021 - December 2022</h3>
+            <h3 class="company-name jobtitles">World Health Organization & University of Notre Dame</h3>
+            <h3 class="job-title jobtitles">Research Assistant</h3>
+            <h3 class="job-duration">March 2021 - May 2022</h3>
             <ul class="job-description">
-              <li>WHO Project on ITS2 and CO1 Gene Sequence Analysis</li>
-              <li>Created R script to extract and parse all available CO1 and ITS2 sequences of sub-Sharan African
-                Anopheles from NCBI and Bold Systems. Script also successfully detected genetic anomalies due to unknown
-                species or human error in data submission.</li>
-              <li>Used SeqMan to further analyze anomalous genes and filter species to conduct physiochemical analysis
-                on.</li>
+              <li>ITS2 and CO1 Gene Sequence Analysis</li>
+              <li>Extracted and parsed all available CO1 and ITS2 sequences of sub-Sharan African Anopheles from NCBI
+                and Bold Systems using R. Script also successfully detected genetic anomalies due to unknown species or
+                human error in data submission.</li>
+              <li>Further analyzed anomalous genes using SeqMan and flagged potential novel species for physiochemical
+                analysis on-site in Africa.</li>
             </ul>
           </div>
           <div id="job4" class="tabcontent">
+            <h3 class="company-name jobtitles">University of Notre Dame</h3>
+            <h3 class="job-title jobtitles">Research Assistant <a class="lab-link"
+                href="https://biology.nd.edu/people/neil-f-lobo/">@ Lobo Lab</a></h3>
+            <h3 class="job-duration">March 2021 - May 2022</h3>
+            <ul class="job-description">
+              <li>Accesibility to Malaria Treatment in Zambia</li>
+              <li>Processed GPS tracker data into shapefiles and generated map of roads to malaria treatment facilities
+                using R.</li>
+              <li>Compared GPS tracker-generated map to satellite images of roads on ArcGIS to assess realistic quality
+                of access to malaria
+                treatment in Zambia.</li>
+            </ul>
+          </div>
+          <div id="job5" class="tabcontent">
             <a href="https://en.wikipedia.org/wiki/Korea_Disease_Control_and_Prevention_Agency">
               <h3 class="company-name jobtitles">Korea Centers for Disease Control and Prevention</h3>
             </a>
@@ -412,7 +456,8 @@
         <div id="main-projects">
           <div class="project-div gray-bg" id="project1">
             <div class="project-title-div">
-              <a href="https://github.com/SolinaKEK/Student-Advisor-Matching"><i class="project-link fa-brands fa-github"></i></a>
+              <a href="https://github.com/SolinaKEK/Student-Advisor-Matching"><i
+                  class="project-link fa-brands fa-github"></i></a>
               <h3 class="project-title">Preference Matching Algorithm</h3>
             </div>
             <ul class="project-description">
@@ -420,11 +465,11 @@
                 noncardinal preferences.</li>
               <li>Implemented the ideated algorithm into a memory and run-time efficient program using deques and sets.
               </li>
-              <li>Utilized Python, Pandas, ImapLib, and NumPy to embed the program into an automated email UI for Notre
-                Dame to use when matching advisors to graduate students.</li>
+              <li>Embedded the program into an automated email UI with Python Pandas, ImapLib, and NumPy for professors
+                to utilize easily.</li>
               <li>Identified deliverables, determined project dependencies and design considerations, assigned specific
-                resources and specifications,
-                distributed responsibility among team members, tracked and reported the project progress weekly.</li>
+                resources and specifications, distributed responsibility among team members, tracked and reported the
+                project progress weekly.</li>
             </ul>
             <div class="project-skills">
               <p>Data Structures</p>
@@ -437,15 +482,15 @@
           <div class="project-div gray-bg" id="project-2">
             <div class="project-title-div">
               <a href="https://github.com/SolinaKEK/KiwoomAPI"><i class="project-link fa-brands fa-github"></i></a>
-              <h3 class="project-title">Kiwoom Securities Tradebot</h3>
+              <h3 class="project-title">Kiwoom Securities API Tradebot</h3>
             </div>
             <ul class="project-description">
               <li>Developed a program to request, collect, pipe data from Kiwoom Security’s (S Korea’s #1 stock
                 brokerage service) API.</li>
-              <li>Designed an Excel file to receive data from above Python program and output visualization of metrics
-                as requested by client.</li>
-              <li>Reduced client’s time spent on data analysis by 70%, while maintaining his 40% annual average profit
-                rate.</li>
+              <li>Designed an Excel file to receive data from above program and output visualizations of metrics as
+                requested by client.</li>
+              <li>Reduced client’s time spent on data parsing, processing, and analysis by 70% while maintaining his 40%
+                annual average profit rate.</li>
             </ul>
             <div class="project-skills">
               <p>Python</p>
@@ -461,9 +506,13 @@
               <h3 class="project-title">Sociopolitical Factors of Covid-19 Response</h3>
             </div>
             <ul class="project-description">
-              <li>Received DaVinci Grant of $4390 by the University of Notre Dame to fund research.</li>
-              <li>Defined a country-specific qualitative index of sociopolitical factors that affect data surveillance measures for pandemic control.</li>
-              <li>Used R to analyze the relationship between index and effectiveness of pandemic control in China, South Korea, and USA based on surveys conducted in the 3 countries.</li>
+              <li>Research was funded by the University of Notre Dame with a <a
+                  href="https://isla.nd.edu/for-students/funding/davinci-multidisciplinary-grant/"
+                  target="_blank">DaVinci Grant</a> of $4390.</li>
+              <li>Defined a country-specific qualitative index of sociopolitical factors that affect data surveillance
+                measures for pandemic control.</li>
+              <li>Analyzed the relationship between index and effectiveness of pandemic control in China, South
+                Korea, and USA based on surveys conducted in the 3 countries.</li>
             </ul>
             <div class="project-skills">
               <p>Political Philosophy</p>
@@ -483,15 +532,16 @@
       </div>
       <div id="get-in-touch" class="blue-bg">
         <div class="section-title-div text-align-left">
-        <h2 class="portfolio-section-title">Contact</h2>
+          <h2 class="portfolio-section-title">Contact</h2>
         </div>
-        <div id="contact-description" class="text-align-left subtitle">I'm interested in working for a company that values work integrity and diversity of thought in the spirit of true innovation, service, and entrepreneurship in the healthcare industry.</div>
+        <div id="contact-description" class="text-align-left subtitle">I'm interested in working for a spirited company
+          that values relentless innovation, service, and work integrity in the healthcare industry.</div>
 
         <div id="contact-links">
           <a href="https://www.linkedin.com/in/solina-kim-8779b1200">
-            <i class="fa-brands blue-bg fa-linkedin"></i> 
+            <i class="fa-brands blue-bg fa-linkedin"></i>
           </a>
-          <a href="https://drive.google.com/uc?export=download&id=1j3M1SeUviPJWBrjmcui_OD6JagmQBHwP"
+          <a href="https://drive.google.com/uc?export=download&id=1hDyjHncNUUYpr9aqm0lqyFg8D4qYbh6J"
             download="SolinaKim_resume" target="_blank">
             <i class="fa-solid fa-file blue-bg"></i>
           </a>
@@ -503,7 +553,7 @@
           </a>
         </div>
       </div>
-      
+
     </main>
 
     <script>

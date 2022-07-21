@@ -112,6 +112,7 @@ img {
   vertical-align: text-bottom;
   font-size: 2rem;
   padding: 0 4px 0 4px;
+  cursor: pointer;
 }
 
 /*////////////////////*/
@@ -284,6 +285,11 @@ a {
 /*////////////////////*/
 main {
   width: 100vw;
+}
+a.in-line-link{
+  text-decoration-line: none;
+  text-decoration: none;
+  display: inline;
 }
 .portfolio-section-title {
   font-size: 30px;
