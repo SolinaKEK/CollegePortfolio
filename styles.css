@@ -1,11 +1,13 @@
-:root{
+/*GLOBAL STYLES*/
+
+:root {
   --blue: #3198f5;
   --gray: rgba(234, 241, 248, 1);
   --black: #05051e;
   --cyan: #88FCFC;
   --yellow: #ffcc04;
-
 }
+
 * {
   padding: 0;
   margin: 0;
@@ -24,11 +26,12 @@
   color: white;
 }
 
-.yellow-bg { 
+.yellow-bg {
   background-color: var(--yellow);
   color: var(--black);
 }
-.white-bg{
+
+.white-bg {
   background-color: white;
   color: var(--blue);
 }
@@ -47,13 +50,15 @@
   -ms-transform: translateY(-50%);
   transform: translateX(-50%);
 }
+a, img, button {
+  cursor: pointer;
+  text-decoration: none;
+}
 
 img.icon {
   -webkit-filter: grayscale(1) invert(1);
   filter: grayscale(1) invert(1);
-}
-
-
+} /* make black icons white */
 
 /*////////////////////*/
 /*////////////////////*/
@@ -62,57 +67,45 @@ img.icon {
 #main-page-contents {
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.centered {
-  position: fixed;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
 
 .main-name-div {
-  position: fixed;
   justify-content: center;
   align-items: center;
-  left: 50%;
-  top: 30%;
-  transform: translateY(-50%);
-  transform: translateX(-50%);
   width: max-content;
 }
 
 .horizontal-menu-buttons {
-  position: fixed;
+  display: flex;
   justify-content: center;
   align-items: center;
-  left: 50%;
-  top: 60%;
-  transform: translateY(-50%);
-  transform: translateX(-50%);
 }
 
-.horizontal-menu-buttons > .tetris-icon {
+.horizontal-menu-buttons>.tetris-icon {
   position: relative;
-  bottom: 3px;
+  bottom: 0.4vh;
 }
 
-.horizontal-menu-buttons > .cave-icon {
+.horizontal-menu-buttons>.cave-icon {
   position: relative;
-  bottom: 1px;
+  bottom: 0.2vh;
 }
+
 .main-name-div>h1.my-name {
-  font-size: 140px;
+  font-size: 11.5vw;
   text-align: center;
 }
 
 .horizontal-menu-buttons>a,
 img {
   vertical-align: text-bottom;
-  font-size: 2rem;
-  padding: 0 4px 0 4px;
-  cursor: pointer;
+  font-size: 2vw;
+  padding: 0 0.4vw;
 }
 
 /*////////////////////*/
@@ -137,8 +130,6 @@ h1.my-name {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 20s ease infinite;
-  display: inline-block;
-  padding-bottom: 10%;
 }
 
 @keyframes textclip {
@@ -155,29 +146,29 @@ h1.my-name {
   }
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.menu-buttons>a, img{
-  font-size: 50px;
-  cursor: pointer;
-}
-
 /*////////////////////*/
 /*//////CREDITS///////*/
 /*////////////////////*/
 /*////////////////////*/
+.credits {
+  text-align: right;
+  font-size: 0.7vw;
+}
+
+.portfolio-footer {
+  padding-bottom: 0.5vh;
+  padding-right: 0.5vw;
+}
+
+.source {
+  text-decoration: none;
+
+}
 
 .footer {
   position: fixed;
-  bottom: 0.3rem;
-  right: 0;
-  text-align: right;
-  font-size: 10px;
-  padding-right: 15px;
-  padding-top: 3%;
+  bottom: 0.5vh;
+  right: 0.5vw;
 }
 
 /*////////////////////*/
@@ -186,8 +177,8 @@ a {
 /*////////////////////*/
 
 .tetris-page-contents {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   font-family: 'Press Start 2P';
   display: flex;
   justify-content: center;
@@ -199,7 +190,7 @@ a {
   display: grid;
   grid-template-columns: 280px 175px;
   align-items: bottom;
-  height: 85%;
+  height: 504px; /* tetris game height */
   padding-top: 15vh;
 }
 
@@ -208,12 +199,12 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 75%;
+  height: 100%
 }
 
 #board {
-  border: solid 2px;
-  border-color: black;
+  border: solid 0.3vh;
+  border-color: var(--black);
 }
 
 .game-stats,
@@ -221,27 +212,25 @@ a {
 #lines,
 #level {
   font-family: 'Press Start 2P', cursive;
-  font-size: 0.7rem;
-  color: black;
-  padding-bottom: 5px;
+  font-size: 1.5vh;
+  color: var(--black);
+  padding-bottom: 0.8vh;
 }
 
 .leaderboard-button {
   background-color: #84a4fc;
   font-family: 'Press Start 2P', curisve;
-  font-size: 10px;
-  padding: 10px 7px;
-  margin: 0;
-  cursor: pointer;
+  font-size: 1.3vh;
+  padding: 0.7vw;
 }
 
 #tetris-page-my-info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 65%;
+  height: 504px; /* tetris game height */
   padding-top: 15vh;
-  padding-left: 20px;
+  padding-left: 2vw;
 }
 
 
@@ -257,14 +246,16 @@ a {
   padding: 50px 10px 0px 0px;
   font-size: 35px;
 }
-#tetris-page-file-icon{
+
+#tetris-page-file-icon {
   position: relative;
-  left: -5px;
+  right: 0.4vw;
 }
-#tetris-page-cave-icon{
+
+#tetris-page-cave-icon {
   position: relative;
-  left: 10px;
-  bottom: 3px;
+  left: 0.7vw;
+  bottom: 0.5vh;
 }
 
 #columned-menu-buttons,
@@ -274,9 +265,11 @@ a {
 }
 
 .tetris-name-div>h1.tetris-name {
-  font-size: 200%;
   font-family: 'Press Start 2P';
-  text-align: end;
+  font-size: 2.5vw;
+}
+#tetris-footer-source {
+  color: var(--black);
 }
 
 /*////////////////////*/
@@ -286,21 +279,24 @@ a {
 main {
   width: 100vw;
 }
-a.in-line-link{
+
+a.in-line-link {
   text-decoration-line: none;
   text-decoration: none;
   display: inline;
 }
+
 .portfolio-section-title {
-  font-size: 30px;
+  font-size: 3.4vh;;
   font-weight: 500;
 }
+
 .subtitle {
-  font-size: 25px;
+  font-size: 3vh;
   font-weight: 400;
 }
 
-.section-title-div{
+.section-title-div {
   width: 100%;
   padding-top: 17vh;
 }
@@ -310,15 +306,18 @@ a.in-line-link{
   justify-content: end;
   padding-right: 15vw;
 }
+
 .text-align-left {
   text-align: left;
   justify-content: start;
   padding-left: 5vw;
 }
-.text-align-center{
+
+.text-align-center {
   text-align: center;
   padding-top: 5vh;
 }
+
 /*////////////////////*/
 /*//////NAV BAR///////*/
 /*////////////////////*/
@@ -352,89 +351,47 @@ nav.nav-bar {
 
 #about-me-catchphrase {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
 
 }
 
-#i-am, #adjectives-div {
-  width: 40vw;
-}
-#i-am {
-  font-size: 75px;
-  font-weight: 400;
-  color: var(--yellow);
-  text-align: center;
+#tagline-div {
+  min-height: 4vh;
+  font-size: 2.5vh;
+  font-weight: 200;
 }
 
 
-#adjectives-div > p{
-  padding-bottom: 8px;
-  font-size: 20px;
-}
 
 #about-me-description {
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  font-size: 18px;
+  align-items: center;
+  justify-content: center;
 }
 
 #about-me-text {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  padding: 0 0% 0 15%;
-  width: 90vw;
+  padding: 3vw;
+  max-width: 40vw;
 }
-
+#about-me-text > p {
+  padding-bottom: 2vh;
+}
 .emphasize {
   font-size: 50px;
+  padding-bottom: 1vh;
 }
 
 #my-photo-div {
   display: flex;
-  justify-content: end;;
-  align-items: center;
-}
-
-span.dot {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  position: relative;
-}
-
-span.black {
-  z-index: 2;
-  width: 290px;
-  border-radius: 50%;
-  background-color: var(--black);
-  position: relative;
-  left: 14vw;
-}
-span.pink {
-  z-index: 1;
-  height: 330px;
-  border-radius: 50%;
-  background-color: #ff6474;
-  position: relative;
-  right: 10vw;
-  bottom: 2vh;
-}
-
-#about-me-photo {
-  position: relative;
-  border-radius: 45%;
-  z-index: 3;
-  background-color: transparent;
-  top: 4vh;
-  right: 26vw;
+  justify-content: center;
 }
 
 
@@ -442,7 +399,7 @@ span.pink {
 /*/////TOOLSSKILLS////*/
 /*////////////////////*/
 
-#tools-skills{
+#tools-skills {
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -450,11 +407,12 @@ span.pink {
   overflow-x: hidden;
 
 }
-#tools-skills > div > h2 {
+
+#tools-skills>div>h2 {
   padding-left: 8%;
 }
 
-#skills-icons{
+#skills-icons {
   padding: 1% 4% 0% 7%;
   display: flex;
   flex-direction: row;
@@ -463,7 +421,7 @@ span.pink {
   justify-content: space-around;
   font-size: 14px;
   text-align: start;
-  
+
 }
 
 #cs-courses {
@@ -471,7 +429,9 @@ span.pink {
 
 }
 
-#cs-skills, #soft-skills, #cs-courses-icons-div {
+#cs-skills,
+#soft-skills,
+#cs-courses-icons-div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -479,14 +439,15 @@ span.pink {
   justify-content: flex-start;
 }
 
-.skills-icon-bg{
+.skills-icon-bg {
   display: flex;
   margin: 1vh 2vh;
   align-items: center;
   padding: 15px 15px;
   width: 13vw;
-  height: 4vh;;
-  background-color: rgba(249,250,251,0.85);
+  height: 4vh;
+  ;
+  background-color: rgba(249, 250, 251, 0.85);
   border-radius: 10% 15%;
   cursor: pointer;
 }
@@ -499,6 +460,7 @@ img.skills-icon-img {
 #stanford-logo {
   width: 35px;
 }
+
 #courses-subtitle {
   position: relative;
   left: -4vw;
@@ -520,7 +482,8 @@ img.skills-icon-img {
 .experience-inner-content {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 4fr;;
+  grid-template-columns: 1fr 4fr;
+  ;
 }
 
 .tab {
@@ -528,6 +491,7 @@ img.skills-icon-img {
   padding-top: 14vh;
   width: 20vw;
 }
+
 .tablinks {
   width: 100%;
   height: 8vh;
@@ -540,6 +504,7 @@ img.skills-icon-img {
   text-align: end;
   font-weight: 500;
 }
+
 .tabcontent {
   padding-top: 11vh;
   padding-left: 10vw;
@@ -548,11 +513,12 @@ img.skills-icon-img {
   display: flex;
   flex-wrap: wrap;
 }
+
 .active {
   border-right-color: var(--yellow);
 }
 
-h3.jobtitles{
+h3.jobtitles {
   display: inline-block;
   padding-right: 10px;
   padding-bottom: 8px;
@@ -574,10 +540,11 @@ h3.job-duration {
   color: var(--blue);
 }
 
-ul.job-description{
+ul.job-description {
   font-size: 15px;
 }
-a.lab-link{
+
+a.lab-link {
   font-weight: 300;
 }
 
@@ -585,7 +552,7 @@ a.lab-link{
 /*//////PROJECTS//////*/
 /*////////////////////*/
 
-#projects{
+#projects {
   width: 100%;
   min-height: 100vh;
   height: fit-content;
@@ -595,7 +562,7 @@ a.lab-link{
   overflow-x: hidden;
 }
 
-#main-projects{
+#main-projects {
   width: 100%;
   height: 70%;
   display: flex;
@@ -604,6 +571,7 @@ a.lab-link{
   justify-content: center;
   padding-top: 8vh;
 }
+
 .project-div {
   width: 40%;
   height: 45vh;
@@ -611,18 +579,20 @@ a.lab-link{
   border-radius: 3%;
   justify-content: space-between;
 }
-.project-title-div{
+
+.project-title-div {
   display: flex;
   padding: 20px;
 }
 
-i.project-link{
+i.project-link {
   padding-right: 10px;
   position: relative;
   top: 2px;
   font-size: 17px;
 }
-ul.project-description{
+
+ul.project-description {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -630,12 +600,14 @@ ul.project-description{
   padding: 0 20px;
   list-style: none;
 }
-ul.project-description > li {
+
+ul.project-description>li {
   padding-bottom: 12px;
   font-weight: 300;
   font-size: 15px;
 }
-div.project-skills{
+
+div.project-skills {
   display: flex;
   justify-content: space-around;
   font-size: 13px;
@@ -645,7 +617,7 @@ div.project-skills{
 }
 
 
-#button-div{
+#button-div {
   width: 100%;
   padding: 5vh 0;
   display: flex;
@@ -666,7 +638,7 @@ div.project-skills{
 
 /*CONTACT*/
 
-#get-in-touch{
+#get-in-touch {
   overflow-x: hidden;
   width: 100vw;
   height: 100vh;
@@ -674,6 +646,7 @@ div.project-skills{
   flex-direction: column;
   justify-content: space-between;
 }
+
 #contact-description {
   padding-top: 5vh;
   padding-right: 20vw;
@@ -690,18 +663,21 @@ div.project-skills{
   height: 40vh;
 }
 
-#contact-links > a {
+#contact-links>a {
   text-align: right;
   font-size: 25px;
 }
-#contact-links > a > i {
+
+#contact-links>a>i {
   color: var(--yellow);
 }
-#contact-links > a > i.fa-file {
+
+#contact-links>a>i.fa-file {
   position: relative;
   right: 0.2vw;
 }
-#contact-links > .nav-link {
+
+#contact-links>.nav-link {
   text-align: right;
   padding: 0;
 }

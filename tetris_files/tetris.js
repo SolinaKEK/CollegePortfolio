@@ -214,14 +214,12 @@ class Tetris {
         if (event.keyCode === KEY.SPACE) {
           // Hard drop
           while (this.board.valid(p)) {
-            this.account.score += POINTS.HARD_DROP;
             this.board.piece.move(p);
             p = this.moves[KEY.DOWN](this.board.piece);
           }
         } else if (this.board.valid(p)) {
           this.board.piece.move(p);
           if (event.keyCode === KEY.DOWN) {
-            this.account.score += POINTS.SOFT_DROP;
           }
         }
       }
@@ -239,4 +237,3 @@ class Tetris {
     this.animate();
   }
 }
-

@@ -17,7 +17,6 @@
   <script type="text/javascript" src="./tetris_files/constants.js" defer></script>
   <script type="text/javascript" src="./tetris_files/board.js" defer></script>
   <script type="text/javascript" src="./tetris_files/piece.js" defer></script>
-  <!--<script type="text/javascript" src="./main.js" defer></script>-->
   <script type="text/javascript" src="./tetris_files/tetris.js" defer></script>
 </head>
 
@@ -28,8 +27,9 @@
 
   <script>
     window.onload = async () => {
-      showContent("#main-page");
+      showContent("#portfolio-pages");
     }
+
     function showContent(templateid) {
       var temp = document.querySelector(templateid);
       var placeholder = document.getElementById("placeholder");
@@ -48,10 +48,8 @@
         tabcontent = document.getElementsByClassName("job-panel-div");
         tablinks = document.getElementsByClassName("job-tab-item");
       }
-
-      tabcontent = document.getElementsByClassName("job-panel-div");
-      tablinks = document.getElementsByClassName("job-tab-item");
     }
+
   </script>
 
 
@@ -59,7 +57,7 @@
   <!-- MAIN PAGE -->
   <!-- MAIN PAGE -->
   <template id="main-page" class="page-wrapper">
-    <section id="main-page-contents" class="centered blue-bg">
+    <section id="main-page-contents" class="blue-bg">
       <div class="main-name-div blue-bg">
         <h1 class="my-name blue-bg">Solina Kim</h1><br>
       </div>
@@ -88,7 +86,8 @@
     <section>
       <div class="credits blue-bg">
         <p class="footer blue-bg">
-          Designed and built by Solina Kim | <a href="fixthisdummygithubwebsite.com" class="blue-bg">Source</a></p>
+          Designed and built by Solina Kim | <a href="https://github.com/SolinaKEK/SolinaKEK.github.io"
+            class="blue-bg">Source</a></p>
       </div>
     </section>
   </template>
@@ -142,7 +141,8 @@
     <section>
       <div class="credits">
         <p class="footer">
-          Designed and built by Solina Kim | <a href="fixthisdummygithubwebsite.com">Source</a></p>
+          Designed and built by Solina Kim | <a id='tetris-footer-source' class='source'
+            href="https://github.com/SolinaKEK/SolinaKEK.github.io">Source</a></p>
       </div>
     </section>
   </template>
@@ -178,17 +178,13 @@
 
     <!--MAIN CONTENT-->
     <main>
+
       <div id="about-me-catchphrase" class="blue-bg">
-        <div id="name-div">
-          <h1 id="i-am">I am...<br></h1>
+        <div class="main-name-div blue-bg">
+          <h1 class="my-name blue-bg">Solina Kim</h1><br>
         </div>
         <div id="adjectives-div">
-          <p class="one-line-description">a ML/DL experimenter</p>
-          <p class="one-line-description">a full stack developer</p>
-          <p class="one-line-description">a healthcare enthusiast</p>
-          <p class="one-line-description">an international collaborator</p>
-          <p class="one-line-description">a sports fanatic</p>
-          <p class="one-line-description">a cave-woman</p>
+          <div id="tagline-div" class="one-line-description"></div>
         </div>
       </div>
 
@@ -199,20 +195,21 @@
             <!-- ADD INTRODUCTION PARAGRAPH -->
           <p class="emphasize">Hi!</p>
           <p>
-          My name is Solina Kim, and I'm a computer science major at the University of Notre Dame. As a rising junior dedicated to working as an engineer in the healthcare industry, I spent this summer at Indiana University Health as a ML Engineering intern evaluating the performance of Microsoft's Text Analytics for Health.</p>
-          <p>I also have experience in done other projects at the intersection of healthcare and computer science, such as ML-based molecular design research for SARS-CoV-2 and bioinformatics for malaria.</p>
+            My name is Solina Kim, and I'm a computer science major at the University of Notre Dame. As a rising junior
+            dedicated to working as an engineer in the healthcare industry, I spent this summer at Indiana University
+            Health as a ML Engineering intern evaluating the performance of Microsoft's Text Analytics for Health.</p>
+          <p>I also have experience in done other projects at the intersection of healthcare and computer science, such
+            as ML-based molecular design research for SARS-CoV-2 and bioinformatics for malaria.</p>
           <p>In my free time, I like to do build programs and apps, play lacrosse and badminton, workout, play tetris,
-          adventure new places, and more.</p>
+            adventure new places, and more.</p>
           <p>
-          I am also a part-time SAT tutor! Please <a style="display: inline; cursor: pointer;" onclick="showContent('#sat-page')"><span>contact me</span></a> if you're
-          interested in SAT tutoring.
+            I am also a part-time SAT tutor! Please <a style="display: inline; cursor: pointer;"
+              onclick="showContent('#sat-page')"><span>contact me</span></a> if you're
+            interested in SAT tutoring.
           </p>
         </div>
         <div id="my-photo-div" class="gray-bg">
-          <span class="black dot"></span>
-          <span class="dot pink"></span>
-
-          <img id="about-me-photo" src="assets/my_photo.JPG" width="200" class="gray-bg" />
+          <img id="about-me-photo" src="assets/my_photo.png" width="350" height="350" class="gray-bg" />
 
         </div>
       </div>
@@ -551,6 +548,11 @@
             <i class="fa-regular fa-envelope-open blue-bg"></i>
           </a>
         </div>
+        <div class="credits">
+          <p class="portfolio-footer">
+            Designed and built by Solina Kim | <a class='source'
+              href="https://github.com/SolinaKEK/SolinaKEK.github.io">Source</a></p>
+        </div>
       </div>
 
     </main>
@@ -573,6 +575,25 @@
 
       // Get the element with id="defaultOpen" and click on it
       document.getElementById("defaultOpen").click();
+
+      var taglines = ["a ML experimenter",
+        "a full stack developer",
+        "a healthcare enthusiast",
+        "a global connector",
+        "a sports fanatic",
+        "a cave-woman",
+      ];
+      var tagline_counter = 0;
+      var tag = document.getElementById("tagline-div");
+      console.log(tag);
+      setInterval(change_tagline, 4000);
+
+      function change_tagline() {
+        tag.innerHTML = taglines[tagline_counter];
+        tagline_counter++;
+
+        if (tagline_counter >= taglines.length) { tagline_counter = 0; }
+      }
     </script>
 
   </template> <!-- end of portofolio pages -->
