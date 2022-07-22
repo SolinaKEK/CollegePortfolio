@@ -6,6 +6,7 @@
   --black: #05051e;
   --cyan: #88FCFC;
   --yellow: #ffcc04;
+  --red: #fe6571;
 }
 
 * {
@@ -14,6 +15,7 @@
   font-family: 'Sora', sans-serif;
   max-width: 100vw;
   scroll-behavior: smooth;
+  list-style: none;
 }
 
 .gray-bg {
@@ -330,14 +332,17 @@ nav.nav-bar {
   align-items: center;
   width: 100%;
   height: 14vh;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 3vw;
   z-index: 10;
+}
+#portfolio-links{
+  padding-right: 3vw;
+  font-size: 2vh;
 }
 
 .nav-link {
   color: white;
-  padding-right: 50px;
+  padding-right: 2vw;
 }
 
 #house-icon {
@@ -368,7 +373,8 @@ nav.nav-bar {
 
 
 #about-me-description {
-  height: 100vh;
+  min-height: 80vh;
+  height: fit-content;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
@@ -378,20 +384,31 @@ nav.nav-bar {
 }
 
 #about-me-text {
-  padding: 3vw;
+  padding: 12vh 0 12vh 6vw;
   max-width: 40vw;
+  width: fit-content;
 }
-#about-me-text > p {
+
+#about-me-text > ul > li:nth-of-type(1) {
+  font-size: 4vw;
+  padding-bottom: 1.5vh;
+}
+
+#about-me-text > ul > li {
+  font-size: 2vh;
   padding-bottom: 2vh;
 }
-.emphasize {
-  font-size: 50px;
-  padding-bottom: 1vh;
+
+#about-me-text > ul > li > a {
+  color: var(--black);
 }
 
 #my-photo-div {
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  padding: 3vw;
 }
 
 
@@ -401,11 +418,8 @@ nav.nav-bar {
 
 #tools-skills {
   width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr 4fr;
-  overflow-x: hidden;
-
+  min-height: 100vh;
+  max-height: max-content;
 }
 
 #tools-skills>div>h2 {
@@ -414,24 +428,16 @@ nav.nav-bar {
 
 #skills-icons {
   padding: 1% 4% 0% 7%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: start;
-  justify-content: space-around;
-  font-size: 14px;
-  text-align: start;
-
 }
 
 #cs-courses {
   width: 100%;
-
+  padding-top: 3vh;
 }
 
 #cs-skills,
 #soft-skills,
-#cs-courses-icons-div {
+#cs-courses-icons-div{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -444,26 +450,52 @@ nav.nav-bar {
   margin: 1vh 2vh;
   align-items: center;
   padding: 15px 15px;
-  width: 13vw;
+  width: 12vw;
   height: 4vh;
-  ;
   background-color: rgba(249, 250, 251, 0.85);
   border-radius: 10% 15%;
   cursor: pointer;
+  font-size: 0.95vw;
 }
 
 img.skills-icon-img {
-  padding-right: 20px;
-  width: 50px;
+  padding-right: 5%;
+  width: 3.4vw;
 }
 
 #stanford-logo {
-  width: 35px;
+  width: 2.6vw;
 }
 
 #courses-subtitle {
   position: relative;
   left: -4vw;
+}
+
+
+div.advanced:hover p.advanced span{
+  display:none;
+}
+div.advanced:hover p.advanced:after{
+  content: "Advanced";
+  color: var(--blue);
+  font-weight: bold;
+}
+div.intermediate:hover p.intermediate span{
+  display:none;
+}
+div.intermediate:hover p.intermediate:after{
+  content: "Intermediate";
+  color: #76BA1B;
+  font-weight: bold;
+}
+div.entrant:hover p.entrant span{
+  display:none;
+}
+div.entrant:hover p.entrant:after{
+  content: "Entrant";
+  color: #f58216;
+  font-weight: bold;
 }
 
 /*////////////////////*/
@@ -475,8 +507,6 @@ img.skills-icon-img {
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 9fr;
-  overflow-x: hidden;
-
 }
 
 .experience-inner-content {
@@ -487,7 +517,7 @@ img.skills-icon-img {
 }
 
 .tab {
-  padding-left: 8vw;
+  padding-left: 6vw;
   padding-top: 14vh;
   width: 20vw;
 }
@@ -498,17 +528,17 @@ img.skills-icon-img {
   background-color: transparent;
   border-style: none solid none none;
   border-right-color: var(--blue);
-  border-right-width: 4px;
-  padding-right: 6px;
+  border-right-width: 0.3vw;
+  padding-right: 1vw;
   cursor: pointer;
   text-align: end;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .tabcontent {
   padding-top: 11vh;
-  padding-left: 10vw;
-  padding-right: 20vw;
+  padding-left: 6vw;
+  padding-right: 13vw;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -516,50 +546,55 @@ img.skills-icon-img {
 
 .active {
   border-right-color: var(--yellow);
-}
+} /* styling connected to script for displaying experience panels */
 
 h3.jobtitles {
   display: inline-block;
-  padding-right: 10px;
-  padding-bottom: 8px;
+  padding-right: 0.5vw;
+  padding-bottom: 1vh;
 }
 
 h3.company-name {
-  font-size: 20px;
+  font-size: 1.4vw;
 }
 
 h3.job-title {
-  font-size: 18px;
+  font-size: 2.3vh;
   font-weight: 200;
 }
 
 h3.job-duration {
-  padding-bottom: 40px;
-  font-size: 14px;
+  padding-bottom: 5vh;
+  font-size: 2vh;
   font-weight: 300;
   color: var(--blue);
 }
 
-ul.job-description {
-  font-size: 15px;
+ul.job-description > li {
+  font-size: 2vh;
+  font-weight: 400;
+  padding-bottom: 2vh;
 }
 
-a.lab-link {
+a.lab-link, i.exp-github-link {
   font-weight: 300;
+  text-decoration: none;
+  color: var(--black);
 }
-
+i.exp-github-link {
+  padding-top: 3vh;
+}
 /*////////////////////*/
 /*//////PROJECTS//////*/
 /*////////////////////*/
 
 #projects {
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
-  height: fit-content;
+  height: max-content;
   display: flex;
   flex-direction: column;
   background-color: var(--black);
-  overflow-x: hidden;
 }
 
 #main-projects {
@@ -574,52 +609,60 @@ a.lab-link {
 
 .project-div {
   width: 40%;
-  height: 45vh;
+  min-height: 45vh;
+  max-height: max-content;
   margin: 20px;
   border-radius: 3%;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
-
+.project-title{
+  font-size: 2.6vh;
+}
 .project-title-div {
   display: flex;
-  padding: 20px;
+  padding: 3% 4% 0% 4%;
 }
 
-i.project-link {
-  padding-right: 10px;
+.project-github {
+  padding-right: 1vw;
   position: relative;
-  top: 2px;
-  font-size: 17px;
+  top: 0.2vh;
+  font-size: 2.3vh;
+  color: var(--black);
+}
+.project-link {
+  color: var(--black);
 }
 
 ul.project-description {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 73%;
-  padding: 0 20px;
+  padding: 3vh 3vw;
   list-style: none;
 }
 
 ul.project-description>li {
-  padding-bottom: 12px;
+  padding-bottom: 1.5vh;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 2vh;
 }
 
 div.project-skills {
   display: flex;
   justify-content: space-around;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 1.6vh;
+  font-weight: 700;
   color: var(--blue);
-
+  padding-bottom: 2vh;
 }
 
 
 #button-div {
   width: 100%;
-  padding: 5vh 0;
+  padding: 5vh 0 10vh 0;
   display: flex;
   justify-content: center;
 }
@@ -630,14 +673,16 @@ div.project-skills {
   border: none;
   border-radius: 100px;
   cursor: pointer;
-  background-color: var(--yellow);
+  background-color: var(--red);
   color: white;
-  font-size: 16px;
+  font-size: 1.9vh;
   font-weight: 600;
 }
 
 /*CONTACT*/
-
+#contact-description > span.emphasize {
+  background-color: var(--red);
+}
 #get-in-touch {
   overflow-x: hidden;
   width: 100vw;
@@ -660,12 +705,13 @@ div.project-skills {
   justify-content: space-around;
   align-items: flex-end;
   padding-right: 3vw;
-  height: 40vh;
+  max-height: 40vh;
 }
 
 #contact-links>a {
   text-align: right;
-  font-size: 25px;
+  font-size: 1.5vw;
+  padding-top: 6vh;
 }
 
 #contact-links>a>i {
@@ -680,4 +726,8 @@ div.project-skills {
 #contact-links>.nav-link {
   text-align: right;
   padding: 0;
+}
+
+#get-in-touch > .credits > p > a {
+  color: white;
 }
