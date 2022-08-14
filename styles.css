@@ -471,6 +471,13 @@ img.skills-icon-img {
   position: relative;
   left: -4vw;
 }
+a.course-link:visited {
+  color: var(--black)
+}
+a.course-link {
+  color: var(--black)
+}
+
 
 
 div.advanced:hover p.advanced span{
