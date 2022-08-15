@@ -1,17 +1,16 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
-<body>
+<body id=article-body>
     <div class="cave-article-content-div">
         <h1 class="cave-article-title">The Truth about NLP for Healthcare</h1>
         <p class="date-author">08-15-2022 Solina Kim</p>
         <ul class="article-text">
             <li>
-                TLDR: <br>
-                I learned <br>
-                1) There is a disparity between corporate and academic agendas in NER model development & deployment. <br>
-                2) The manual error analysis step in NLP model development can be really insightful. <br>
-                3) Pooling data and resources across organizations is vital to high model performance.<br><br>
+                TLDR: I learned <br><br>
+                1) The importance of manual error analysis in NLP model development.<br>
+                2) Disparity between corporate and academic agendas in ML model development & deployment. <br>
+                3) Pooling data and resources across organizations is vital to developing better models.<br><br>
             </li>
             <li class="article-text">
                 This summer, I had an amazing opportunity to work as a ML Engineer at Indiana University Health.
@@ -33,33 +32,15 @@
                 However, the truth of NLP for Healthcare turned out to be much more complicated than what the headlines
                 can make it seem.
             </li>
-            <img alt="sample output of Microsoft's NER model, from Microsoft's website" src="https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/text-analytics-for-health/media/call-api/health-named-entity-recognition.png" width="500vw">
-            <figcaption class="cave-figcaption">Sample model output, from Micrsoft's Text Analytics for Health website.</figcaption>
-
+            <div class="cave-img-div">
+                <img class='cave-article-image' alt="sample output of Microsoft's NER model, from Microsoft's website" src="https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/text-analytics-for-health/media/call-api/health-named-entity-recognition.png" width="500vw">
+                <figcaption class="cave-figcaption">Sample model output, from Micrsoft's Text Analytics for Health website.</figcaption>
+            </div>
             <li>
                 Here's what I learned:
             </li>
             <li><br>
-                1. Disparity between corporate and academic agendas.
-            </li>
-            <li>
-                When developing and deploying a model, companies and academia had different priorities and methods.
-                For example, a PhD student on my team initially wanted to develop her own model to compare with Micrsoft's NER model. 
-                However, that approach defeated the purpose of IU Health reducing costs by outsourcing their model. 
-                The company simply wanted to know if the model was roughly "good enough" to invest in, not what the AUC-ROC or weighted F1 scores were.
-            </li>
-            <li>
-                Another interesting difference was that when given the model, academia were interested in readmission rates, 
-                prescriptions, diagnosis, etc. However, IU Health was focused on PII (personal identifiable information),
-                since if the model could perfectly detect and remove all PII, then IU Health could maximize the value of the model
-                by sharing the data with all clearance levels.
-            </li>
-            <li>
-                This helped me realize that bridging this gap through engagement between academia and industry is important, since 
-                the fruits of academia are reaped by industry and society.
-            </li>
-            <li><br>
-                2. Importance of the manual error analysis step in ML diagnosis.
+                1. Importance of the manual error analysis step in ML diagnosis.
             </li>
             <li>
                 When developing models, diagnosising the performance is always the hardest step for me.
@@ -81,6 +62,26 @@
             <li>
 
             </li>
+            <li><br>
+                2. Disparity between corporate and academic agendas.
+            </li>
+            <li>
+                When developing and deploying a model, companies and academia had different priorities and methods.
+                For example, a PhD student on my team initially wanted to develop her own model to compare with Micrsoft's NER model. 
+                However, that approach defeated the purpose of IU Health reducing costs by outsourcing their model. 
+                The company simply wanted to know if the model was roughly "good enough" to invest in, not what the AUC-ROC or weighted F1 scores were.
+            </li>
+            <li>
+                Another interesting difference was that when given the model, academia were interested in readmission rates, 
+                prescriptions, diagnosis, etc. However, IU Health was focused on PII (personal identifiable information),
+                since if the model could perfectly detect and remove all PII, then IU Health could maximize the value of the model
+                by sharing the data with all clearance levels.
+            </li>
+            <li>
+                This helped me realize that bridging this gap through engagement between academia and industry is important, since 
+                the fruits of academia are reaped by industry and society.
+            </li>
+            
             <li><br>
                 3. Limitations of commercial models, and the importance of cross-organizational data pooling.
             </li>
