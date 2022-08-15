@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solina Kim</title>
+  <meta property="og:title" content="Solina Kim" />
+  <meta name="description" content="Portfolio for Solina Kim.">
+  <meta name="author" content="Solina Kim">
+  <script src="https://kit.fontawesome.com/23a76d2e32.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="cave-pages-wrapper gray-bg" class="cave-pages gray-bg">
+    <div class='nav-bar blue-bg vertical-nav-bar' id="nav-bar">
+      <div class="cave-nav-div">
+        <a href="./index.html">
+          <i class="blue-bg fa-solid fa-house-user"></i>
+        </a>
+        <a class='tetris-icon' href="./tetris.html">
+          <img class='icon tetris-icon' src="assets/tetris.png" width="23vw" />
+        </a>
+        <a href="portfolio.html">
+          <i class="fa-solid fa-rocket blue-bg"></i>
+        </a>
+        <a href="https://drive.google.com/uc?export=download&id=1Qk-YfcyABw2qaop1Ogp-HGEG9iv34i0T"
+          download="SolinaKim_resume" target="_blank">
+          <i class="fa-solid fa-file blue-bg"></i>
+        </a>
+        <a href="https://github.com/SolinaKEK" target="_blank">
+          <i class="fa-brands fa-github blue-bg"></i>
+        </a>
+        <a href="mailto:kkim24@nd.edu">
+          <i class="fa-regular fa-envelope-open blue-bg"></i>
+        </a>
+      </div>
+      <div class="cave-articles-div">
+        <p class="cave-more-articles">More Thought Snippets</p>
+        <div class="cave-articles-list">
+          <a class='blue-bg' onClick=showContent()">The Truth about NLP for Healthcare</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="placeholder">
+      <!-- cave pages -->
+      <iframe id="feature-article" class="yellow-bg  cave-pages" height="500vh">
+      </iframe>
+    </div>
+  </div>
+
+  <script>
+    window.onload = async () => {
+      document.getElementById('feature-article').src = './posts/summer_internship.html'
+    }
+
+  </script>
+
+
+
+
+
+</body>
+
+</html>
