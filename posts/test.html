@@ -1,0 +1,98 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+<body id=article-body>
+    <div class="cave-article-content-div">
+        <h1 class="cave-article-title">Working in NLP for Healthcare</h1>
+        <p class="date-author">08-15-2022 Solina Kim</p>
+        <ul class="article-text">
+            <li>
+                I LEARNED TEST TEST TEST
+            </li>
+            <li class="article-text">
+                This summer, I had an amazing opportunity to work as a ML Engineer at Indiana University Health.
+                IU Health is a not-for-profit medical provider in Indiana with over 16 hospitals and over 36K employees
+                 -- big enough for ML to improve business and clinical practices, but not big enough to develop their own models.
+            </li>
+            <li>
+                As a solution, IU Health outsourced to Microsoft's Text Analytics for Health, 
+                a named entity recognition (NER) model developed by Azure Cognitive Services. By using a commercial model,
+                 IU Health hoped to extract valuable data from their unstructured doctors' notes, 
+                 while avoiding the cost of annotating data and training an in-house model.
+            </li>
+            <li>
+                And I was tasked with evaluating the performance of this model...without access to the neural architecture nor ground truth data.
+            </li>
+            <li>
+                At first glance, the model seemed state of the art and ready to go,
+                being able to recognize an unprecedentedly wide range of entities and relationships.
+                However, the truth of NLP for Healthcare turned out to be much more complicated than what the headlines
+                can make it seem.
+            </li>
+            <div class="cave-img-div">
+                <img class='cave-article-image' alt="sample output of Microsoft's NER model, from Microsoft's website" src="https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/text-analytics-for-health/media/call-api/health-named-entity-recognition.png" width="500vw">
+                <figcaption class="cave-figcaption">Sample model output, from Micrsoft's Text Analytics for Health website.</figcaption>
+            </div>
+            <li>
+                Here's what I learned:
+            </li>
+            <li><br>
+                1. Importance of the manual error analysis step in ML diagnosis.
+            </li>
+            <li>
+                When developing models, diagnosising the performance is always the hardest step for me.
+                Although it is clear cut in theory, in reality there could be a hundred different reasons why you're model isn't converging.
+                This summer, I took a deep dive into manually analyzing model output and was able to identify
+                many things that I could not have known through pure statistical analysis.                
+            </li>
+            <li>
+                The case-sensitive model was performing poorly in recognizing PII entities, making mistakes such as identifying 'Covid' as a person.
+                Another common error was conflict between the health text recognition model and the PII model.
+                For example, the health text recognition model would identify 'Covid'
+                as a symptom, while the PII model identified the same word as a person.
+                The model was also observed to perform poorly on common medical abbreviations, such as 'pt' for patient.
+            </li>
+            <li>
+                These observations indicated that the model was trained on case-sensitive, formal language -- perhaps with a dataset before the onset of Covid.
+                Targeted improvements to the training set could improve model performance, which leads into my 3rd takeaway.
+            </li>
+            <li>
+
+            </li>
+            <li><br>
+                2. Disparity between corporate and academic agendas.
+            </li>
+            <li>
+                When developing and deploying a model, companies and academia had different priorities and methods.
+                For example, a PhD student on my team initially wanted to develop her own model to compare with Micrsoft's NER model. 
+                However, that approach defeated the purpose of IU Health reducing costs by outsourcing their model. 
+                The company simply wanted to know if the model was roughly "good enough" to invest in, not what the AUC-ROC or weighted F1 scores were.
+            </li>
+            <li>
+                Another interesting difference was that when given the model, academia were interested in readmission rates, 
+                prescriptions, diagnosis, etc. However, IU Health was focused on PII (personal identifiable information),
+                since if the model could perfectly detect and remove all PII, then IU Health could maximize the value of the model
+                by sharing the data with all clearance levels.
+            </li>
+            <li>
+                This helped me realize that bridging this gap through engagement between academia and industry is important, since 
+                the fruits of academia are reaped by industry and society.
+            </li>
+            
+            <li><br>
+                3. Limitations of commercial models, and the importance of cross-organizational data pooling.
+            </li>
+            <li>
+                I believe the results were not as good as we hoped because the commercial model 
+                was trained on data very different from IU Health's. These results emphasized the need for 
+                more collaboration and open-source datasets in an effort to make high-quality commercial models
+                availble for everyoen to generate good from.
+            </li>
+            <li>
+                Overall, this internship was a great experience to learn how NER models are being used in the healthcare industry, 
+                and to diagnosis Microsoft's model first-hand.
+                Now, I feel more confident in finding ways to contribute to ML research and training/diagnosing my own models.
+            </li>
+        </ul>
+    </div>    
+</body>

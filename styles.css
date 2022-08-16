@@ -740,7 +740,7 @@ div.project-skills {
 /*////////////////////*/
 #cave-pages-wrapper {
   width: 100vw;
-  height: fit-content;
+  height: max-content;
 }
 .cave-pages > * {
   font-size: 1vw;
@@ -775,14 +775,16 @@ div.project-skills {
   font-size: 130%
 }
 
-.cave-articles-list > a{ 
+.cave-articles-list > button{ 
   text-decoration: underline;
   text-decoration-color: none;
+  border: none;
 }
 
 
 #feature-article {
-  height:200vh;
+  display: flex;
+  height: 300vh;
   width: 90%;
   border: none;
   position: relative;
@@ -825,7 +827,7 @@ div.project-skills {
   font-size: 0.8vh;
 }
 .article-text > *{
-  font-size: 1vh;
+  font-size: 100%;
 }
 
 .article-text > li {

@@ -43,14 +43,14 @@
       <div class="cave-articles-div">
         <p class="cave-more-articles">More Thought Snippets</p>
         <div class="cave-articles-list">
-          <a class='blue-bg' onClick=showContent()">Working in NLP for Healthcare</a>
+          <button class='blue-bg' id="posts/summer_internship.html" onClick="newArticle(this.id)">Working in NLP for Healthcare</a>
         </div>
       </div>
     </div>
 
-    <div id="placeholder">
+    <div id="placeholder" height="600vh">
       <!-- cave pages -->
-      <iframe id="feature-article" class="yellow-bg  cave-pages" height="500vh">
+      <iframe id="feature-article" class="yellow-bg  cave-pages">
       </iframe>
     </div>
   </div>
@@ -59,13 +59,13 @@
     window.onload = async () => {
       document.getElementById('feature-article').src = './posts/summer_internship.html'
     }
-
+    function newArticle(clicked_id){
+      console.log(clicked_id)
+      document.getElementById('feature-article').src = clicked_id
+    }
   </script>
-
-
-
-
-
+  
+  
 </body>
 
 </html>
